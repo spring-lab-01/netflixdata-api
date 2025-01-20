@@ -16,13 +16,15 @@ http://localhost:8080/api/v1/content-dataset?offset=0&page_size=10&sort_by=relea
 
 # Testing using curl commands
 
-curl -X "GET" ^
-"http://localhost:8080/api/v1/content-dataset?offset=0&page_size=10&sort_by=releaseYear&filter=type:tv,year:2025" ^
+curl -v "http://localhost:8080/ping" ^
+-H "accept: */*"
+
+
+curl -v "http://localhost:8080/api/v1/content-dataset?offset=0&page_size=10&sort_by=releaseYear" ^
 -H "accept: */*" ^
 -u "user:password"
 
-curl -X "GET" ^
-"http://localhost:8080/api/v1/content-dataset?offset=0&page_size=10&sort_by=releaseYear&filter=type:tv,year:2025" ^
+curl -v "http://localhost:8080/api/v1/content-dataset?offset=0&page_size=10&sort_by=releaseYear" ^
 -H "accept: */*" ^
 -H "Authorization: Basic dXNlcjpwYXNzd29yZA=="
 
