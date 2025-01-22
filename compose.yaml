@@ -24,7 +24,9 @@ services:
      db:
        condition: service_healthy
     environment:
-      - spring.datasource.url=jdbc:postgresql://db:5432/netflixdata
+      - POSTGRES_URL=jdbc:postgresql://db:5432/netflixdata
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
   db:
    image: postgres
    restart: always
